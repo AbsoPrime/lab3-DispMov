@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'pages/pantalla.dart';
 
-void main() {
-  runApp(const MiPantalla());
-}
+class MiPantalla extends StatelessWidget{
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MiPantalla({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,6 +17,7 @@ class MyApp extends StatelessWidget {
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
+  
 }
 
 class MyHomePage extends StatefulWidget {
@@ -39,10 +35,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MiPantalla();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MiPantalla extends State<MyHomePage> {
   int _counter = 0;
   final String undoIcon = 'assets/icons/redoIcon2.svg';
   final String plusIcon = 'assets/icons/plus.svg';
@@ -87,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: const Text("Una demo de Darko"),
+        title: const Text("Una demo de Darko Muñoz"),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -109,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'Has pulsado el botón ésta cantidad de veces:',
+              'Has pulsado el botón ésta cantidad de pulsaciones:',
             ),
             Text(
               '$_counter',
