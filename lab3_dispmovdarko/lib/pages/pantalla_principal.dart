@@ -18,11 +18,10 @@ const String listDetailIcon = 'assets/icons/listDetIcon.svg';
 String statusIcon = 'assets/icons/neutralFace.svg';
 String message = "Ingrese un número luego pulse el botón Play";
 
-const String textInfo = "Este es un programa hecho en Flutter y Dart,"
-" con un par de pantallas para navegar.";
-const String listInfo1 = " Un contador con botones";
-const String listInfo2 = " Un menú con detalles";
-const String listInfo3 = " Otro menú con detalles enlistados";
+List textos = ["Este es un programa hecho en Flutter y Dart, con un par de pantallas para navegar.", 
+  " Un contador con botones",
+  " Un menú con detalles",
+  " Otro menú con detalles enlistados"];
 
 String bullet = "\u2022";
 
@@ -256,12 +255,12 @@ class Detail extends StatelessWidget{
         body: Column(
           children: [
             const SizedBox(height: 200),
-            const SizedBox(
+            SizedBox(
               width: 300,
               height: 300,
               child: Text(
-                textInfo,
-                textScaler: TextScaler.linear(2),
+                textos[0],
+                textScaler: const TextScaler.linear(2),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -313,17 +312,17 @@ class ListDetail extends StatelessWidget{
             ),
             const SizedBox(height: 50),
             Text(
-              bullet + listInfo1, 
+              bullet + textos[1], 
               textScaler: const TextScaler.linear(1.5),
               textAlign: TextAlign.center,
             ),
             Text(
-              bullet + listInfo2, 
+              bullet + textos[2], 
               textScaler: const TextScaler.linear(1.5),
               textAlign: TextAlign.center,
             ),
             Text(
-              bullet + listInfo3, 
+              bullet + textos[3], 
               textScaler: const TextScaler.linear(1.5),
               textAlign: TextAlign.center,
             ),
