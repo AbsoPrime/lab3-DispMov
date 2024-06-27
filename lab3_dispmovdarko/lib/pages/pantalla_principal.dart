@@ -52,6 +52,7 @@ class MyHomePage extends StatefulWidget {
 
   @override
   State<MyHomePage> createState() => _MiPantalla();
+  
 }
 
 class _MiPantalla extends State<MyHomePage> {
@@ -110,6 +111,7 @@ class _MiPantalla extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context){
+    print("Estado Creado");
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
