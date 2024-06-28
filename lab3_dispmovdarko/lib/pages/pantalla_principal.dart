@@ -57,6 +57,23 @@ class MyHomePage extends StatefulWidget {
 
 class _MiPantalla extends State<MyHomePage> {
   
+  @override
+  void initState() {
+    print("State iniciado, montado: $mounted");
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    print("Dependencias cambiadas, montado: $mounted");
+    super.didChangeDependencies();
+  }
+
+  @override
+  void setState(VoidCallback fn) {
+    print("Estado reconstruido (rebuild), montado: $mounted");
+    super.setState(fn);
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -111,7 +128,7 @@ class _MiPantalla extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context){
-    print("Estado Creado");
+    print("Build iniciado (Pantalla principal), montado: $mounted");
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -241,6 +258,31 @@ class _MiPantalla extends State<MyHomePage> {
       )
     );
   }
+
+  @override
+  void didUpdateWidget(covariant MyHomePage oldWidget) {
+    print("Widget actualizado");
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void deactivate() {
+    print("Widget desactivado");
+    super.deactivate();
+  }
+
+  @override
+  void dispose() {
+    print("Widget eliminado");
+    super.dispose();
+  }
+
+  @override
+  void reassemble() {
+    print("Aplicación rearmada");
+    super.reassemble();
+  }
+
 }
 
 class Detail extends StatelessWidget{
@@ -248,6 +290,7 @@ class Detail extends StatelessWidget{
 
   @override
   Widget build(BuildContext context){
+    print("Build iniciado (Pantalla detalles)");
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -282,6 +325,8 @@ class Detail extends StatelessWidget{
       )
     );
   }
+
+  
 }
 
 class ListDetail extends StatelessWidget{
