@@ -105,6 +105,12 @@ class _MiPantalla extends State<MyHomePage> {
         case 2:
           Navigator.push(context, MaterialPageRoute(builder: (context) => const ListDetail()));
         break;
+        case 3:
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const Sensors()));
+        break;
+        case 4:
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const Gestures()));
+        break;
       }
     });
   }
@@ -198,33 +204,11 @@ class _MiPantalla extends State<MyHomePage> {
                   )
                 ),
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Theme.of(context).colorScheme.primary,
-                      minimumSize: const Size(102, 60)
-                    ),
-                    child: const Text(
-                      'Ir a Detalles', 
-                      textScaler: TextScaler.linear(1.5),
-                      ),
-                    onPressed: (){_toPage(1);},
-                  ),
-                  const SizedBox(width: 32),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      foregroundColor: Theme.of(context).colorScheme.primary,
-                      minimumSize: const Size(102, 60)
-                    ),
-                    child: const Text(
-                      'Ir a Lista', 
-                      textScaler: TextScaler.linear(1.5)
-                      ),
-                    onPressed: (){_toPage(2);},
-                  ),
+                  SizedBox(width: 32),
                 ],
               ),
             ],
@@ -250,6 +234,18 @@ class _MiPantalla extends State<MyHomePage> {
                 child: ListTile(
                       title: const Text('Lista de Detalles'),
                       onTap: () {_toPage(2);},
+                    )
+              ),
+              Card(
+                child: ListTile(
+                      title: const Text('Sensores'),
+                      onTap: () {_toPage(3);},
+                    )
+              ),
+              Card(
+                child: ListTile(
+                      title: const Text('Gestos'),
+                      onTap: () {_toPage(4);},
                     )
               )
             ]
@@ -373,6 +369,90 @@ class ListDetail extends StatelessWidget{
               textScaler: const TextScaler.linear(1.5),
               textAlign: TextAlign.center,
             ),
+          ],
+        )
+        
+      )
+    );
+  }
+}
+
+class Sensors extends StatelessWidget{
+  const Sensors({super.key});
+  
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: const Text("Sensores"),
+        ),
+        body: ListView(
+          children: <Widget>[
+            const SizedBox(height: 80),
+            UnconstrainedBox(
+              child: SizedBox(
+                width: 150,
+                height: 60,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Theme.of(context).colorScheme.primary,
+                      elevation: 1,
+                  ),
+                  onPressed: () {Navigator.pop(context);},
+                  child: const Text('Volver', textScaler: TextScaler.linear(1.5),),
+                ),
+              ),
+            ),
+            const SizedBox(height: 50),
+            const Text(
+              "Una pantalla de Sensores", 
+              textScaler: TextScaler.linear(3),
+              textAlign: TextAlign.center,
+            )
+          ],
+        )
+        
+      )
+    );
+  }
+}
+
+class Gestures extends StatelessWidget{
+  const Gestures({super.key});
+  
+  @override
+  Widget build(BuildContext context){
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          title: const Text("Gestos"),
+        ),
+        body: ListView(
+          children: <Widget>[
+            const SizedBox(height: 80),
+            UnconstrainedBox(
+              child: SizedBox(
+                width: 150,
+                height: 60,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      foregroundColor: Theme.of(context).colorScheme.primary,
+                      elevation: 1,
+                  ),
+                  onPressed: () {Navigator.pop(context);},
+                  child: const Text('Volver', textScaler: TextScaler.linear(1.5),),
+                ),
+              ),
+            ),
+            const SizedBox(height: 50),
+            const Text(
+              "Una pantalla de Gestos", 
+              textScaler: TextScaler.linear(3),
+              textAlign: TextAlign.center,
+            )
           ],
         )
         
